@@ -1,8 +1,36 @@
-<h1>Questions</h1>
 
-<ul>
-  <% @questions.each do |question| %>
-    <li><%= question.title %></li>
-    </li><%= question.description %></li>
-  <% end %>
-</ul>
+
+<div class="container">
+  <img style="float:left" src="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6" class="img-responsive" alt="Responsive image" width="72" height="72"><h1>hack<b>overflow</b></h1>
+</div><br>
+
+<div class="container">
+<h3>Questions</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Question</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.title %></td>
+        <td><%= question.description %></td>
+        <td><%= link_to 'Show', question %></td>
+        <td><%= link_to 'Edit', edit_question_path(question) %></td>
+        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Question', new_question_path, class: "btn btn-warning btn-lg" %>
+</div>
+
