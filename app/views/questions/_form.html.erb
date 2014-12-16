@@ -1,7 +1,7 @@
 
-<%= form_for @question, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+<%= form_for @question do |f| %>
   Question Title: <%= f.text_field :title %><br>
   Description:<br>
   <%= f.text_area :description, size: "60x12" %><br>
-  <%= f.submit "Ask Question" %>
+  <%= f.submit :class => "btn btn-warning btn-lg" %>
 <% end %>
