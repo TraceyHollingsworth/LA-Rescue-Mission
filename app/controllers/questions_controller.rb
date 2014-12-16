@@ -3,6 +3,7 @@ class QuestionsController < ApplicationController
   # GET /questions
   def index
     @questions = Question.all
+    # order(:created_at)
   end
 
   # GET /questions/1
@@ -22,8 +23,28 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to @question, notice: 'Question was successfully created.'
     else
+      flash[:warning] = @question.errors.full_messages.join(".  ")
       render action: 'new'
     end
+  end
+
+  def edit
+    @question = Question.find(params[:id])
+  end
+
+  def update
+    @question = Question.find(params[:id])
+
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    Question.destroy(params[:id])
+    redirect_to :action => "index"
   end
 
   # GET /questions/search
