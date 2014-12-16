@@ -1,0 +1,17 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <img style="float:left" src="http://cdn.sstatic.net/stackexchange/img/logos/se/se-icon.png" width="42" height="42"><%= link_to "hackExchange", root_path, class: "navbar-brand" %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "All Questions", questions_path %></li>
+        <li><%= link_to "Ask Question", new_question_path %></li>
+      </ul>
+      </div>
+    </div><!-- /.navbar-collapse -->
+</nav>
