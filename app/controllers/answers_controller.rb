@@ -1,5 +1,13 @@
 class AnswersController < ApplicationController
 
+  def index
+    @answers = Answer.all.order( 'answers.created_at DESC' )
+  end
+
+  def show
+    @answer = Answer.find(params[:question_id])
+  end
+
   def create
     @question = Question.find(params[:question_id])
     @answer = @question.answers.new(answer_params)

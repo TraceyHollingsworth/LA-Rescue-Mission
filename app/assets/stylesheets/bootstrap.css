@@ -6330,3 +6330,8 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+.flash {
+  padding: 1em;
+  background-color: #FFAD33;
+}

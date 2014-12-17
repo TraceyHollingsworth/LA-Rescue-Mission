@@ -29,6 +29,11 @@ gem 'spring',        group: :development
 # Add user auth with Devise
 gem 'devise'
 
+# Accept markdown language
+gem 'redcarpet'
+
+# colorizes markdown language
+gem 'pygments.rb'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

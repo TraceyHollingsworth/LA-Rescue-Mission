@@ -1,0 +1,6 @@
+<%= form_for([@question, @question.answers.build]) do |f| %>
+
+  <%= f.label :description, "Add an Answer:" %><br>
+  <%= f.text_area :description %><br>
+  <%= f.submit :class => "button" %>
+<% end %>
