@@ -2,9 +2,9 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+         :recoverable, :rememberable, :trackable, :validatable
 
-         has_many :posts, dependent: :destroy
+         has_many :questions, dependent: :destroy
 
     def self.find_or_create_form_auth_hash(auth_hash)
       find_by_auth_hash(auth_hash) || create_form_auth_hash(auth_hash)
@@ -28,9 +28,9 @@ class User < ActiveRecord::Base
         )
     end
 
-    def password_required?
-      super && provider.blank?
-    end
+    # def password_required?
+    #   super && provider.blank?
+    # end
 
     def update_with_password(params, *options)
       if encrypted_password.blank?
